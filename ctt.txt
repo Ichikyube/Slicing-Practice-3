@@ -1,0 +1,1 @@
+npx tailwindcss -i twinput.css -o twstyle.css --watch
