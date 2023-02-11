@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Easybank landing page</title>
+
   <link href="twstyle.css" rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -20,103 +21,87 @@
     .attribution a {
       color: hsl(228, 45%, 44%);
     }
-
-    body {
-      font-family: "Inter", sans-serif;
-    }
-  
-    .background-animate {
-      background-size: 400%;
-  
-      -webkit-animation: AnimationName 3s ease infinite;
-      -moz-animation: AnimationName 3s ease infinite;
-      animation: AnimationName 3s ease infinite;
-    }
-  
-    @keyframes AnimationName {
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-    }
   </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
-  <header class="bg-myVeryLightGray">
-    <nav class="absolute z-50 bg-myWhite px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full top-0 left-0 border-b
-     border-gray-200 dark:border-gray-600">
+  <header>
+    <nav
+      class="absolute bg-myWhite px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="#" class="flex items-center">
           <img src="images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Easybank Logo">
         </a>
         <div class="flex md:order-2">
-          <button type="button" class="after:transition-all after:opacity-0 hover:after:opacity-100 after:w-0 hover:after:w-full after:duration-300 after:ease-in text-white bg-gradient-to-r 
-            after:z-10 text-center mr-3 md:mr-0 after:mix-blend-color
-            after:rounded-full from-myLimeGreen via-lime-500 to-emerald-400 relative after:absolute 
-            after:h-full after:top-0 after:left-0 after:bg-gradient-to-l
-            after:from-teal-500 after:via-cyan-400 after:to-teal-200 focus:ring-4 focus:outline-none 
-            focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5">
+          <button type="button"
+            class="text-white bg-myLimeGreen hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             Request Invite
           </button>
-          <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+          <button data-collapse-toggle="navbar-sticky" type="button"
+            class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-sticky" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 
-                  15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+              <path fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
             </svg>
           </button>
         </div>
         <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
           <ul
             class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li class="group">
+            <li>
               <a href="#"
-                class="relative pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:top-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-top-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                 aria-current="page">Home</a>
             </li>
-            <li class="group">
-              <a href="#" class="relative pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:top-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-top-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white">About</a>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
             </li>
-            <li class="group">
-              <a href="#" class="relative pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:top-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-top-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white">Contact</a>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
             </li>
-            <li class="group">
-              <a href="#" class="relative pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:top-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-top-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white">Blog</a>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
             </li>
-            <li class="group">
-              <a href="#" class="relative pb-1 after:transition-transform after:duration-500 after:ease-out after:absolute after:top-0 after:left-0 after:block after:h-[2px] after:w-full after:origin-top-right after:scale-x-0 after:bg-blue-500 after:content-[''] after:group-hover:origin-bottom-left after:group-hover:scale-x-100 block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white">Careers</a>
+            <li>
+              <a href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Careers</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="flex flex-row-reverse h-[576px] bg-right-bottom bg-no-repeat bg-intro-desktop [background-size:70%] [background-position-x:42rem] [background-position-y:-7rem]">
-      <div class="relative lg:inset-y-0 lg:w-1/2 justify-items-end justify-self-end">
-        <img class="absolute top-0 lg:justify-self-end" src="images/image-mockups.png" alt="">
+    <div class="flex flex-row-reverse">
+      <div class="lg:relative lg:inset-y-0 lg:w-1/2 justify-items-end justify-self-end bg-myVeryLightGray -z-20">
+        <img class="top-0 w-full lg:w-full lg:justify-self-end -z-0" src="images/image-mockups.png" alt="">
+        <img class="absolute max-w-3xl -z-10 -top-14 -right-40" src="images/bg-intro-desktop.svg" alt="" srcset="">
       </div>
-      <div class="relative overflow-hidden">
+      <div class="relative overflow-hidden bg-myVeryLightGray -z-30">
         <div class="mx-auto max-w-7xl">
-          <div class="relative pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+          <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+
             <main class="px-4 mx-auto mt-10 max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
               <div class="sm:text-center lg:text-left">
-                <h1 class="text-4xl font-black tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
-                  <span class="block transition duration-300 ease-in-out xl:inline hover:animate-text hover:bg-gradient-to-r hover:from-teal-500 hover:via-purple-500 hover:to-orange-500 hover:bg-clip-text hover:text-transparent"> Next generation digital banking</span>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                  <span class="block xl:inline"> Next generation digital banking</span>
                 </h1>
                 <p
                   class="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                   Take your financial life online. Your Easybank account will be a one-stop-shop
                   for spending, saving, budgeting, investing, and much more.</p>
                 <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div >
-                    <button type="button" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white transition-all duration-300 transform border border-transparent rounded-full hover:-translate-y-1 active:translate-y-0 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 background-animate md:py-4 md:px-10 md:text-lg
-                    after:transition-transform after:duration-300 after:ease-in-out after:absolute after:blur-lg after:bottom-0 after:left-1/5 after:block after:h-0 after:hover:h-[2px] after:w-10/12 after:origin-bottom-right after:hover:blur-sm after:scale-x-0  after:bg-gradient-to-r after:from-pink-500 after:via-red-500 after:to-rose-500  after:background-animate after:content-[''] overflow-visible hover:after:translate-y-1 after:hover:origin-bottom-left after:hover:scale-x-100">
-                      Request Invite
-                    </button>
+                  <div>
+                    <a href="#"
+                      class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white border border-transparent rounded-full bg-myLimeGreen hover:bg-myLimeGreen md:py-4 md:px-10 md:text-lg">
+                      Request Invite</a>
                   </div>
                 </div>
               </div>
@@ -126,17 +111,19 @@
       </div>
     </div>
   </header>
-  <section id="why" class="w-full bg-myLightGrayishBlue h-[576px] py-12 flex flex-col justify-around">
-      <div class="lg:text-left px-4 max-w-7xl sm:px-6 lg:px-8">
+  <div class="py-12 bg-myLightGrayishBlue">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="lg:text-center">
         <h3 class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
           Why choose Easybank?
         </h3>
-        <p class="max-w-2xl mt-4 text-xl text-gray-500">We leverage Open Banking to turn your bank account
+        <p class="max-w-2xl mt-4 text-xl text-gray-500 lg:mx-auto">We leverage Open Banking to turn your bank account
           into your financial hub. Control
           your finances like never before.</p>
       </div>
-      <div class="mt-10  mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
-        <dl class="space-y-10 flex justify-around md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10 md:space-y-0">
+
+      <div class="mt-10">
+        <dl class="space-y-10 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10 md:space-y-0">
           <div class="relative">
             <dt>
               <div class="items-center justify-center w-12 h-12 text-white rounded-full bg-myLimeGreen">
@@ -186,8 +173,11 @@
           </div>
         </dl>
       </div>
-  </section>
+    </div>
+  </div>
+
   <section>
+
     <h1>Latest Articles</h1>
     <ul class="flex">
       <li class="order-4">
@@ -298,13 +288,15 @@
         </div>
       </div>
     </div>
-
+    
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
     <div class="flex justify-between">
       <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+            <path fill-rule="evenodd"
+              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+              clip-rule="evenodd"></path>
           </svg>
           <span class="sr-only">Facebook page</span>
         </a>

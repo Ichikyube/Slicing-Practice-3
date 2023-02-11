@@ -19,6 +19,28 @@ module.exports = {
         'intro-desktop': "url('/images/bg-intro-desktop.svg')",
         'intro-mobile': "url('/img/bg-intro-mobile.png')"
       },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '70%': '70%',
+        '16': '4rem',
+      },
+      animation: {
+        text: 'text 5s ease infinite',
+      },
+      keyframes: {
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
+      },
     },
   },
   plugins: [],

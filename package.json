@@ -1,0 +1,23 @@
+{
+  "name": "easybank-landing-page-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./twinput.css -o ./twstyle.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ichikyube/Slicing-Practice-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ichikyube/Slicing-Practice-3/issues"
+  },
+  "homepage": "https://github.com/Ichikyube/Slicing-Practice-3#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
+  }
+}
